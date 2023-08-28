@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['email'])) {
-
+    header('Location: new_page.html');
     // REPLACE THIS 2 LINES AS YOU DESIRE
     $email_to = "eugene.vlassov@sparkytech.org";
     $email_subject = "You've got a new submission";
@@ -68,9 +68,9 @@ if (isset($_POST['email'])) {
     @mail($email_to, $email_subject, $email_message, $headers);
 ?>
 
-    <!-- Replace this as your success message -->
-
-    header("Location: sparkyexample.xyz/index.html")
+    Thank you! Your order has been placed. Check your email for confirmation.
+    
+    We will have your website ready within 2 weeks.
 
 <?php
 }
