@@ -1,3 +1,8 @@
+
+
+
+
+
 <!DOCTYPE HTML>
 <!--
 	Helios by HTML5 UP
@@ -7,13 +12,19 @@
 <html>
 	<script src="https://dash.cartfuel.io/cartfuel.js"></script>
 	<head>
-		<title>Left Sidebar - Helios by HTML5 UP</title>
+		<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Contact Form</title>
+    <!-- Form styling -->
+    <link rel="stylesheet" href="formcarry-form.css" />
+		<title>About</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
-	<body class="left-sidebar is-preload">
+	<body class="no-sidebar is-preload">
 		<div id="page-wrapper">
 
 			<!-- Header -->
@@ -22,7 +33,7 @@
 					<!-- Inner -->
 						<div class="inner">
 							<header>
-								<h1><a href="index.html" id="logo">Helios</a></h1>
+								<h1><a href="index.html" id="logo">Sparky Tech</a></h1>
 							</header>
 						</div>
 
@@ -42,93 +53,83 @@
 				<div class="wrapper style1">
 
 					<div class="container">
-						<div class="row gtr-200">
-							<div class="col-4 col-12-mobile" id="sidebar">
-								
-								
-							</div>
-							<div class="col-8 col-12-mobile imp-mobile" id="content">
-								<article id="main">
-									<header>
-										<h2><a href="#">Get Started</a></h2>
-										<p>
-											<head>
-												<meta charset="UTF-8" />
-												<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-												<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-												<title>Contact Form</title>
-												<!-- Form styling -->
-												<link rel="stylesheet" href="formcarry-form.css" />
-											  </head>
-											  <body>
-												<div class="formcarry-container">
-													<form action="form-process.php" method="POST" class="formcarry-form">
-													<label for="name">Your Name</label>
-													<input type="text" id="name" name="fullName" required />
+						<article id="main" class="special">
+							<header>
+								<h2><a href="#">Get Started</a></h2>
+								<p>
+									Fill out the form below
+
+									<body>
+										<div class="formcarry-container">
+											<form action="form-process.php" method="POST" class="formcarry-form">
+											<label for="name">Your Name</label>
+											<input type="text" id="name" name="fullName" required />
+
+											<label for="phone">Phone Number</label>
+											<input type="text" id="phone" name="phonenumber" required />
+									
+											<label for="email">Email Address</label>
+											<input type="email" id="email" name="email" required />
+
+											<label for="company">Restaurant Name</label>
+											<input type="text" id="company" name="companyname" required />
+
+											<label for="domain">Desired Domain Name</label>
+											<input type="text" id="domain" name="domainname" placeholder="ex: www.sparkytech.org" required />
+
+										
+												
+											<label for="file">Upload Your Menu</label>
+											<input type="file" id="file" name="filename" multiple />
+												
+												
+										
+
+
+												<label for="cars">Select Your Features:</label>
+												<select id="feature" name="features">
+												  <option value="volvo">--Please select your features--</option>
+												  <option value="o">Online Ordering</option>
+												  <option value="ot">Online Ordering and Table Reservations</option>
+												  <option value="of">Online Ordering and Food Delivery</option>
+												  <option value="otf">Online Ordering, Table Reservations, and Food Delivery</option>
+												</select>
 											
-													<label for="email">Your Email Address</label>
-													<input type="email" id="email" name="email" required />
-											
-													<label for="message">Your Message</label>
-													<textarea name="message" id="message" cols="30" rows="10"></textarea>
-											
-													<button type="submit">Send</button>
-												  </form>
-												</div>
-											  </body>
+											  
+											  
+									
+											<label for="message">Comments</label>
+											<textarea name="message" id="message" cols="30" rows="10"></textarea>
+									
+											<button type="submit">Go to payment</button>
+										  </form>
+										</div>
+									  </body>
 
 
-
-
-											<script defer>
-												cartfuel('99fe04ec-dd91-413b-a039-4ce17d5c1987', 'https://dash.cartfuel.io');
-												</script>
-										</p>
-									</header>
-								</article>
-							</div>
-
-						</div>
-						<hr />
+									<script defer>
+										cartfuel('99fe04ec-dd91-413b-a039-4ce17d5c1987', 'https://dash.cartfuel.io');
+										</script>
+								</p>
+							</header>
+							
+						</article>
 						
 					</div>
 
 				</div>
 
 			<!-- Footer -->
-				<div id="footer">
-					<div class="container">
-						
-						<hr />
-						<div class="row">
-							<div class="col-12">
-
-								<!-- Contact -->
-									<section class="contact">
-										<header>
-											<h3>Nisl turpis nascetur interdum?</h3>
-										</header>
-										<p>Urna nisl non quis interdum mus ornare ridiculus egestas ridiculus lobortis vivamus tempor aliquet.</p>
-										<ul class="icons">
-											<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-											<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-											<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-											<li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
-											<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-											<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">Linkedin</span></a></li>
-										</ul>
-									</section>
-
-								<!-- Copyright -->
-									<div class="copyright">
-										<ul class="menu">
-											<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-										</ul>
-									</div>
-
-							</div>
-
+			<div id="footer">
+				<div class="col-12">
+					<!-- Copyright -->
+						<div class="copyright">
+							<ul class="menu">
+								<li>&copy; Sparky Tech LLC. All rights reserved.</li>
+							</ul>
 						</div>
+				</div>
+			</div>
 					</div>
 				</div>
 

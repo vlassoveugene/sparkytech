@@ -15,13 +15,14 @@ if (isset($_POST['email'])) {
 
     // validation expected data exists
     if (
+        !isset($_POST['companyname']) ||
         !isset($_POST['fullName']) ||
         !isset($_POST['email']) ||
         !isset($_POST['message'])
     ) {
         problem('Oh looks like there is some problem with your form data.');
     }
-
+    $company = $_POST['companyname'];
     $name = $_POST['fullName']; // required
     $email = $_POST['email']; // required
     $message = $_POST['message']; // required
@@ -57,6 +58,7 @@ if (isset($_POST['email'])) {
 
     $email_message .= "Name: " . clean_string($name) . "\n";
     $email_message .= "Email: " . clean_string($email) . "\n";
+    $email_message .= "Company: " . clean_string($company) . "\n";
     $email_message .= "Message: " . clean_string($message) . "\n";
 
     // create email headers
@@ -68,7 +70,7 @@ if (isset($_POST['email'])) {
 
     <!-- Replace this as your success message -->
 
-    Thanks for contacting us, we will get back to you as soon as possible.
+    header("Location: sparkyexample.xyz/index.html")
 
 <?php
 }
