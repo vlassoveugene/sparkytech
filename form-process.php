@@ -19,10 +19,11 @@ if (isset($_POST['email'])) {
         !isset($_POST['name']) ||
         !isset($_POST['email']) ||
         !isset($_POST['phone'])
-        !isset($_POST['domain'])
-        !isset($_POST['address'])
-        !isset($_POST['restaurantphone'])
-        !isset($_POST['remailaddress'])
+        
+        //!isset($_POST['domain'])
+        //!isset($_POST['address'])
+        //!isset($_POST['restaurantphone'])
+        //!isset($_POST['remailaddress'])
        
     
        
@@ -35,11 +36,11 @@ if (isset($_POST['email'])) {
     $name = $_POST['name']; // required
     $email = $_POST['email']; // required
     $message = $_POST['message']; // required
-    $message = $_POST['phone']; // required
-    $message = $_POST['domain']; // required
-    $message = $_POST['address']; // required
-    $message = $_POST['restaurantphone']; // required
-    $message = $_POST['remailaddress']; // required
+    //$message = $_POST['phone']; // required
+   // $message = $_POST['domain']; // required
+    //$message = $_POST['address']; // required
+    //$message = $_POST['restaurantphone']; // required
+   // $message = $_POST['remailaddress']; // required
     
     
     $error_message = "";
@@ -72,14 +73,14 @@ if (isset($_POST['email'])) {
     }
 
     $email_message .= "Name: " . clean_string($name) . "\n";
-    $email_message .= "Phone Number: " . clean_string($phone) . "\n";
+    //$email_message .= "Phone Number: " . clean_string($phone) . "\n";
     $email_message .= "Email: " . clean_string($email) . "\n";
-    $email_message .= "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -" . "\n";
+    //$email_message .= "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -" . "\n";
     $email_message .= "Company: " . clean_string($company) . "\n";
-    $email_message .= "Domain: " . clean_string($domain) . "\n";
-    $email_message .= "Restaurant Address: " . clean_string($address) . "\n";
-    $email_message .= "Restaurant Phone Number: " . clean_string($restaurantphone) . "\n";
-    $email_message .= "Restaurant Email Address: " . clean_string($remailaddress) . "\n";
+    //$email_message .= "Domain: " . clean_string($domain) . "\n";
+    //$email_message .= "Restaurant Address: " . clean_string($address) . "\n";
+    //$email_message .= "Restaurant Phone Number: " . clean_string($restaurantphone) . "\n";
+    //$email_message .= "Restaurant Email Address: " . clean_string($remailaddress) . "\n";
    
     $email_message .= "Message: " . clean_string($message) . "\n";
     
