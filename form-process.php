@@ -24,7 +24,7 @@ if (isset($_POST['email'])) {
         !isset($_POST['restaurantphone'])
         !isset($_POST['remailaddress'])
        
-        !isset($_POST['feature'])
+    
        
      
 
@@ -41,7 +41,7 @@ if (isset($_POST['email'])) {
     $message = $_POST['restaurantphone']; // required
     $message = $_POST['remailaddress']; // required
     
-    $message = $_POST['feature']; // required
+    
     $error_message = "";
     $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
 
@@ -80,7 +80,7 @@ if (isset($_POST['email'])) {
     $email_message .= "Restaurant Address: " . clean_string($address) . "\n";
     $email_message .= "Restaurant Phone Number: " . clean_string($restaurantphone) . "\n";
     $email_message .= "Restaurant Email Address: " . clean_string($remailaddress) . "\n";
-    $email_message .= "Features: " . clean_string($feature) . "\n";
+   
     $email_message .= "Message: " . clean_string($message) . "\n";
     
   
