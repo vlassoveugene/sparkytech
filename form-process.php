@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['email'])) {
-    header('Location: payment.html');
+    header('Location: https://sparkyexample.xyz/payment.html');
     // REPLACE THIS 2 LINES AS YOU DESIRE
     $email_to = "eugene.vlassov@sparkytech.org";
     $email_subject = "You've got a new submission";
