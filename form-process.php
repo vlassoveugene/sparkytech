@@ -15,18 +15,33 @@ if (isset($_POST['email'])) {
 
     // validation expected data exists
     if (
-        !isset($_POST['companyname']) ||
-        !isset($_POST['fullName']) ||
+        !isset($_POST['company']) ||
+        !isset($_POST['name']) ||
         !isset($_POST['email']) ||
-        !isset($_POST['message'])
+        !isset($_POST['phone'])
+        !isset($_POST['domain'])
+        !isset($_POST['address'])
+        !isset($_POST['restaurantphone'])
+        !isset($_POST['remailaddress'])
+        !isset($_POST['file'])
+        !isset($_POST['feature'])
+       
+     
+
     ) {
         problem('Oh looks like there is some problem with your form data.');
     }
-    $company = $_POST['companyname'];
-    $name = $_POST['fullName']; // required
+    $company = $_POST['company'];
+    $name = $_POST['name']; // required
     $email = $_POST['email']; // required
     $message = $_POST['message']; // required
-
+    $message = $_POST['phone']; // required
+    $message = $_POST['domain']; // required
+    $message = $_POST['address']; // required
+    $message = $_POST['restaurantphone']; // required
+    $message = $_POST['remailaddress']; // required
+    $message = $_POST['file']; // required
+    $message = $_POST['feature']; // required
     $error_message = "";
     $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
 
@@ -57,9 +72,17 @@ if (isset($_POST['email'])) {
     }
 
     $email_message .= "Name: " . clean_string($name) . "\n";
+    $email_message .= "Phone Number: " . clean_string($phone) . "\n";
     $email_message .= "Email: " . clean_string($email) . "\n";
+    $email_message .= "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -" . "\n";
     $email_message .= "Company: " . clean_string($company) . "\n";
+    $email_message .= "Domain: " . clean_string($domain) . "\n";
+    $email_message .= "Restaurant Address: " . clean_string($address) . "\n";
+    $email_message .= "Restaurant Phone Number: " . clean_string($restaurantphone) . "\n";
+    $email_message .= "Restaurant Email Address: " . clean_string($remailaddress) . "\n";
+    $email_message .= "Features: " . clean_string($feature) . "\n";
     $email_message .= "Message: " . clean_string($message) . "\n";
+    $email_message .= "Menu Files: " . clean_string($file) . "\n";
 
     // create email headers
     $headers = 'From: ' . $email . "\r\n" .
