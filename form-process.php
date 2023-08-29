@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['email'])) {
-    header('Location: https://sparkyexample.xyz/payment.html');
+    header('Location: payment.html');
     // REPLACE THIS 2 LINES AS YOU DESIRE
     $email_to = "eugene.vlassov@sparkytech.org";
     $email_subject = "You've got a new submission";
@@ -23,7 +23,7 @@ if (isset($_POST['email'])) {
         !isset($_POST['address'])
         !isset($_POST['restaurantphone'])
         !isset($_POST['remailaddress'])
-        !isset($_POST['file'])
+       
         !isset($_POST['feature'])
        
      
@@ -40,7 +40,7 @@ if (isset($_POST['email'])) {
     $message = $_POST['address']; // required
     $message = $_POST['restaurantphone']; // required
     $message = $_POST['remailaddress']; // required
-    $message = $_POST['file']; // required
+    
     $message = $_POST['feature']; // required
     $error_message = "";
     $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
@@ -83,7 +83,7 @@ if (isset($_POST['email'])) {
     $email_message .= "Features: " . clean_string($feature) . "\n";
     $email_message .= "Message: " . clean_string($message) . "\n";
     
-    $email_message->addAttachment($file);
+  
 
     // create email headers
     $headers = 'From: ' . $email . "\r\n" .
