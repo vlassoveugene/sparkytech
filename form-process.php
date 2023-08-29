@@ -75,7 +75,7 @@ if (isset($_POST['email'])) {
     $email_message .= "Name: " . clean_string($name) . "\n";
     //$email_message .= "Phone Number: " . clean_string($phone) . "\n";
     $email_message .= "Email: " . clean_string($email) . "\n";
-    //$email_message .= "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -" . "\n";
+    $email_message .= "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -" . "\n";
     $email_message .= "Company: " . clean_string($company) . "\n";
     //$email_message .= "Domain: " . clean_string($domain) . "\n";
     //$email_message .= "Restaurant Address: " . clean_string($address) . "\n";
