@@ -15,10 +15,10 @@ if (isset($_POST['email'])) {
 
     // validation expected data exists
     if (
-        !isset($_POST['company']) ||
+        //!isset($_POST['company']) ||
         !isset($_POST['name']) ||
         !isset($_POST['email']) ||
-        !isset($_POST['phone'])
+        !isset($_POST['message'])
         
         //!isset($_POST['domain'])
         //!isset($_POST['address'])
@@ -32,7 +32,7 @@ if (isset($_POST['email'])) {
     ) {
         problem('Oh looks like there is some problem with your form data.');
     }
-    $company = $_POST['company'];
+    //$company = $_POST['company'];
     $name = $_POST['name']; // required
     $email = $_POST['email']; // required
     $message = $_POST['message']; // required
@@ -75,8 +75,8 @@ if (isset($_POST['email'])) {
     $email_message .= "Name: " . clean_string($name) . "\n";
     //$email_message .= "Phone Number: " . clean_string($phone) . "\n";
     $email_message .= "Email: " . clean_string($email) . "\n";
-    $email_message .= "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -" . "\n";
-    $email_message .= "Company: " . clean_string($company) . "\n";
+    //$email_message .= "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -" . "\n";
+    //$email_message .= "Company: " . clean_string($company) . "\n";
     //$email_message .= "Domain: " . clean_string($domain) . "\n";
     //$email_message .= "Restaurant Address: " . clean_string($address) . "\n";
     //$email_message .= "Restaurant Phone Number: " . clean_string($restaurantphone) . "\n";
