@@ -2173,6 +2173,14 @@ input, select, textarea {
 		}
 
 /* Header */
+div.containerprice {
+	text-align: center;
+  }
+  
+  ul.myUL {
+	display: inline-block;
+	text-align: left;
+  }
 
 	#header {
 		position: relative;
@@ -2182,7 +2190,18 @@ input, select, textarea {
 		background-attachment: fixed;
 		color: #fff;
 		text-align: center;
-		padding: 7.5em 0 2em 0;
+		padding: 3em 0 2em 0;
+		cursor: default;
+	}
+	#header2 {
+		position: relative;
+		background-color: #1f1920;
+		background-size: cover;
+		background-position: center center;
+		background-attachment: fixed;
+		color: #fff;
+		text-align: center;
+		padding: 3em 0 2em 0;
 		cursor: default;
 	}
 
