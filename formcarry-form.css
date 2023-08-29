@@ -22,8 +22,8 @@
 
 .formcarry-container {
   /* container */
-  --c-width: 50%;
-  --c-max-width: 500px;
+  --c-width: 90%;
+  --c-max-width: 800px;
 
   width: var(--c-width);
   max-width: var(--c-max-width);
