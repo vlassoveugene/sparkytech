@@ -82,7 +82,8 @@ if (isset($_POST['email'])) {
     $email_message .= "Restaurant Email Address: " . clean_string($remailaddress) . "\n";
     $email_message .= "Features: " . clean_string($feature) . "\n";
     $email_message .= "Message: " . clean_string($message) . "\n";
-    $email_message .= "Menu Files: " . clean_string($file) . "\n";
+    
+    $email_message->addAttachment($file);
 
     // create email headers
     $headers = 'From: ' . $email . "\r\n" .
