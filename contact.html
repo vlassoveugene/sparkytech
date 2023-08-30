@@ -54,22 +54,30 @@
 								<body>
 									<div class="formcarry-container">
 										<form action="form-process2.php" method="POST" enctype="multipart/form-data">
-											<label for="to">To:</label>
-											<input type="email" id="to" name="to"><br>
-											
-											<label for="subject">Subject:</label>
-											<input type="text" id="subject" name="subject"><br>
-											
-											<label for="message">Message:</label>
-											<textarea id="message" name="message"></textarea><br>
-											
-											<label for="from">From:</label>
-											<input type="email" id="from" name="from"><br>
-											
-											<label for="attachment">Attachment:</label>
-											<input type="file" id="attachment" name="attachment"><br>
-											
-											<input type="submit" value="Send">
+											<label>
+												<span>Your Name</span> 
+													<input type="text" value="Jon Snow" name="s_name" />
+												</label>
+												<label>
+												<span>Your Email</span>
+													<input type="email" value=""  name="s_email" />
+												</label>
+												<label>
+												<span>Message</span>
+													<textarea name="s_message"></textarea>
+												</label>
+												<label>
+												<span>Attachments</span>
+												<!-- File input fields, you can add as many as required-->
+													<input type="file" name="file[]" />
+													<input type="file" name="file[]" />
+													<input type="file" name="file[]" />
+												<!-- OR -->
+												<!-- <input type="file" name="file[]" multiple="multiple" /> -->
+												</label>
+												<label>
+												<input type="submit" value="Send" />
+												</label>
 									  </form>
 									</div>
 								  </body>
