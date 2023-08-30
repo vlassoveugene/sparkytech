@@ -51,6 +51,10 @@ if (isset($_POST['email'])) {
         $error_message .= 'Name does not seem valid.<br>';
     }
 
+    if (!preg_match($string_exp, $rname)) {
+        $error_message .= 'Restaurant Name does not seem valid.<br>';
+    }
+
     if (strlen($message) < 2) {
         $error_message .= 'Message should not be less than 2 characters<br>';
     }
