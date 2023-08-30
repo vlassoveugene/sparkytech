@@ -2,7 +2,7 @@
     
     <?php
 if (isset($_POST['Email'])) {
-    header('Location: payment.html');
+    //header('Location: payment.html');
     // EDIT THE 2 LINES BELOW AS REQUIRED
     $email_to = "eugene.vlassov@sparkytech.org";
     $email_subject = "New form submissions";
