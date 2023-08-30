@@ -23,7 +23,7 @@ if (isset($_POST['email'])) {
         !isset($_POST['raddress']) ||
         !isset($_POST['rphone']) ||
         !isset($_POST['remail']) ||
-        !isset($_POST['myfile']) ||
+      
         !isset($_POST['features']) ||
         !isset($_POST['message'])
     ) {
@@ -38,7 +38,7 @@ if (isset($_POST['email'])) {
     $raddress = $_POST['raddress']; // required
     $rphone = $_POST['rphone']; // required
     $remail = $_POST['remail']; // required
-    $myfile = $_POST['myfile']; // required
+ 
     $features = $_POST['features']; // required
     $message = $_POST['message']; // required
 
@@ -71,9 +71,9 @@ if (isset($_POST['email'])) {
         return str_replace($bad, "", $string);
     }
 
-    $name_of_uploaded_file = basename($_FILES['myfile']['name']);
-
-    $path_of_uploaded_file = $upload_folder . $name_of_uploaded_file;
+    $file = $_FILES["attachment"]["tmp_name"];
+    $filename = $_FILES["attachment"]["name"];
+    $attachment = chunk_split(base64_encode(file_get_contents($file)));
 
 
     $email_message .= "Name: " . clean_string($name) . "\n";
@@ -87,7 +87,7 @@ if (isset($_POST['email'])) {
     $email_message .= "Restaurant Email: " . clean_string($remail) . "\n";
     $email_message .= "Features: " . clean_string($features) . "\n";
     $email_message .= "Message: " . clean_string($message) . "\n";
-    $email_message->addAttachment($path_of_uploaded_file);
+    $email_message .= $attachment."\r\n";
 
     // create email headers
     $headers = 'From: ' . $email . "\r\n" .
