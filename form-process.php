@@ -103,9 +103,10 @@ if (isset($_POST['email'])) {
     $email_message .= "--".$boundary."--";
 
     // create email headers
-    $headers = 'From: ' . $email . "\r\n" .
-        'Reply-To: ' . $email . "\r\n" .
-        'X-Mailer: PHP/' . phpversion() . "\r\n" . "Content-Type: multipart/mixed; boundary=\".$boundary.\"\r\n";
+    $headers = "From: $email\r\n";
+    $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "Content-Type: multipart/mixed; boundary=\".$boundary.\"\r\n";
+    
     @mail($email_to, $email_subject, $email_message, $headers);
 ?>
 
