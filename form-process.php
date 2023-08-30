@@ -23,6 +23,7 @@ if (isset($_POST['email'])) {
         !isset($_POST['raddress']) ||
         !isset($_POST['rphone']) ||
         !isset($_POST['remail']) ||
+        !isset($_POST['features']) ||
         !isset($_POST['message'])
     ) {
         problem('Oh looks like there is some problem with your form data.');
@@ -36,6 +37,7 @@ if (isset($_POST['email'])) {
     $raddress = $_POST['raddress']; // required
     $rphone = $_POST['rphone']; // required
     $remail = $_POST['remail']; // required
+    $features = $_POST['features']; // required
     $message = $_POST['message']; // required
 
     $error_message = "";
@@ -76,6 +78,7 @@ if (isset($_POST['email'])) {
     $email_message .= "Restaurant Address: " . clean_string($raddress) . "\n";
     $email_message .= "Restaurant Phone Number: " . clean_string($rphone) . "\n";
     $email_message .= "Restaurant Email: " . clean_string($remail) . "\n";
+    $email_message .= "Features: " . clean_string($features) . "\n";
     $email_message .= "Message: " . clean_string($message) . "\n";
 
     // create email headers
