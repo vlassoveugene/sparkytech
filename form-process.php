@@ -29,13 +29,13 @@ if (isset($_POST['email'])) {
     }
 
     $name = $_POST['fullName']; // required
-    $message = $_POST['phone']; // required
+    $phone = $_POST['phone']; // required
     $email = $_POST['email']; // required
-    $message = $_POST['rname']; // required
-    $message = $_POST['domain']; // required
-    $message = $_POST['raddress']; // required
-    $message = $_POST['rphone']; // required
-    $message = $_POST['remail']; // required
+    $rname = $_POST['rname']; // required
+    $domain = $_POST['domain']; // required
+    $raddress = $_POST['raddress']; // required
+    $rphone = $_POST['rphone']; // required
+    $remail = $_POST['remail']; // required
     $message = $_POST['message']; // required
 
     $error_message = "";
@@ -49,10 +49,6 @@ if (isset($_POST['email'])) {
 
     if (!preg_match($string_exp, $name)) {
         $error_message .= 'Name does not seem valid.<br>';
-    }
-
-    if (!preg_match($string_exp, $rname)) {
-        $error_message .= 'Restaurant Name does not seem valid.<br>';
     }
 
     if (strlen($message) < 2) {
