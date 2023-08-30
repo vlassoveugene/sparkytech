@@ -1,15 +1,15 @@
 <?php
 // recipient email address
-$to = "eugene.vlassov@sparkytech.org";
+$to = $_POST['to'];
 
 // subject of the email
-$subject = "Email with Attachment";
+$subject = $_POST['subject'];
 
 // message body
-$message = "This is a sample email with attachment.";
+$message = $_POST['message'];
 
 // from
-$from = "sender@example.com";
+$from = $_POST['from'];
 
 // boundary
 $boundary = uniqid();
@@ -30,9 +30,9 @@ $message .= "Content-Type: text/plain; charset=UTF-8\r\n";
 $message .= "Content-Transfer-Encoding: base64\r\n\r\n";
 $message .= chunk_split(base64_encode($message));
 $message .= "--".$boundary."\r\n";
-$message .= "Content-Type: application/octet-stream; name=\"file.pdf\"\r\n";
+$message .= "Content-Type: application/octet-stream; name=\"".$filename."\"\r\n";
 $message .= "Content-Transfer-Encoding: base64\r\n";
-$message .= "Content-Disposition: attachment; filename=\"file.pdf\"\r\n\r\n";
+$message .= "Content-Disposition: attachment; filename=\"".$filename."\"\r\n\r\n";
 $message .= $attachment."\r\n";
 $message .= "--".$boundary."--";
 
