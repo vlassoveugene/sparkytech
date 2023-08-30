@@ -16,14 +16,26 @@ if (isset($_POST['email'])) {
     // validation expected data exists
     if (
         !isset($_POST['fullName']) ||
+        !isset($_POST['phone']) ||
         !isset($_POST['email']) ||
+        !isset($_POST['rname']) ||
+        !isset($_POST['domain']) ||
+        !isset($_POST['raddress']) ||
+        !isset($_POST['rphone']) ||
+        !isset($_POST['remail']) ||
         !isset($_POST['message'])
     ) {
         problem('Oh looks like there is some problem with your form data.');
     }
 
     $name = $_POST['fullName']; // required
+    $message = $_POST['phone']; // required
     $email = $_POST['email']; // required
+    $message = $_POST['rname']; // required
+    $message = $_POST['domain']; // required
+    $message = $_POST['raddress']; // required
+    $message = $_POST['rphone']; // required
+    $message = $_POST['remail']; // required
     $message = $_POST['message']; // required
 
     $error_message = "";
@@ -56,7 +68,14 @@ if (isset($_POST['email'])) {
     }
 
     $email_message .= "Name: " . clean_string($name) . "\n";
+    $email_message .= "Phone Number: " . clean_string($phone) . "\n";
     $email_message .= "Email: " . clean_string($email) . "\n";
+    $email_message .= "- - - - - - - - - - - - - - - - - - - - - - - - - - -" . "\n";
+    $email_message .= "Restaurant Name: " . clean_string($rname) . "\n";
+    $email_message .= "Domain: " . clean_string($domain) . "\n";
+    $email_message .= "Restaurant Address: " . clean_string($raddress) . "\n";
+    $email_message .= "Restaurant Phone Number: " . clean_string($rphone) . "\n";
+    $email_message .= "Restaurant Email: " . clean_string($remail) . "\n";
     $email_message .= "Message: " . clean_string($message) . "\n";
 
     // create email headers
