@@ -35,8 +35,8 @@ if($_POST && isset($_FILES['file']))
         $body = "--$boundary\r\n";
         $body .= "Content-Type: text/plain; charset=ISO-8859-1\r\n";
         $body .= "Content-Transfer-Encoding: base64\r\n\r\n"; 
-        $body .= chunk_split(base64_encode("Name: ")) . chunk_split(base64_encode($sender_name)) . chunk_split(base64_encode("\n")); 
-        $body .= chunk_split(base64_encode("Name: ")) . chunk_split(base64_encode($sender_message)) . chunk_split(base64_encode("\n"));
+        $body .= chunk_split(base64_encode("Name: " . $sender_name . "\n")); 
+        $body .= chunk_split(base64_encode("Message: " . $sender_message . "\n"));
 
         //$email_message .= "Message: " . clean_string($message) . "\n";
 
