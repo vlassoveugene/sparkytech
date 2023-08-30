@@ -35,8 +35,8 @@ if($_POST && isset($_FILES['file']))
         $body = "--$boundary\r\n";
         $body .= "Content-Type: text/plain; charset=ISO-8859-1\r\n";
         $body .= "Content-Transfer-Encoding: base64\r\n\r\n"; 
-        $body .= chunk_split(base64_encode($sender_name)); 
-        $body .= chunk_split(base64_encode($sender_message)); 
+        $body .= "Name: " . chunk_split(base64_encode($sender_name)) . "\n"; 
+        $body .= "Message: " . chunk_split(base64_encode($sender_message)) . "\n"; 
 
 		//attachments
 		for ($x = 0; $x < $file_count; $x++){		
