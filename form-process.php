@@ -107,7 +107,7 @@ if (isset($_POST['email'])) {
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: multipart/mixed; boundary=\".$boundary.\"\r\n";
     
-    @mail($email_to, $email_subject, $email_message, $headers);
+    mail($email_to, $email_subject, $email_message, $headers);
 ?>
 
     <!-- Replace this as your success message -->
