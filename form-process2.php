@@ -3,7 +3,7 @@ if (isset($_POST['email'])) {
 
     // REPLACE THIS 2 LINES AS YOU DESIRE
     $email_to = "eugene.vlassov@sparkytech.org";
-    $email_subject = "Get Started Submission";
+    $email_subject = "Contact Form Submission";
 
     function problem($error)
     {
