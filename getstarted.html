@@ -53,81 +53,57 @@
 							<header>
 								<img src="images/logo2.png" alt="" style="width:70px;height:70px;">
 								<h2><a href="#">Get Started</a></h2>
-								<p>
-									Fill out the form below
+								
+								<body>
 
-									<body>
-										<div class="formcarry-container">
-											<form action="form-process.php" method="POST" class="formcarry-form">
-
-											Personal Information
-											<br>
-											<br>
-											<label for="Name">Your Name</label>
-											<input type="text" id="Name" name="Name" required />
-
-											<label for="Email">Email Address</label>
-											<input type="email" id="Email" name="Email" required />
-<!--
-											<label for="phone">Phone Number</label>
-											<input type="txt" id="phone" name="phone" required />
+									<link href="contact-form.css" rel="stylesheet">
 									
-											<label for="Email">Email Address</label>
-											<input type="email" id="Email" name="Email" required />
-											<br>	
-											<br>
-											<br>
-											<br>
-											Restaurant Information
-											<br>
-											<br>
-											<label for="company">Restaurant Name</label>
-											<input type="text" id="company" name="company" required />
-
-											<label for="domain">Desired Domain Name</label>
-											<input type="text" id="domain" name="domain" placeholder="ex: www.sparkytech.org" required />
-
-											<label for="address">Restaurant Address</label>
-											<input type="text" id="address" name="address" required />
-
-											<label for="restaurantphone">Restaurant Phone Number</label>
-											<input type="text" id="restaurantphone" name="restaurantphone" required />
-
-											<label for="remailaddress">Restaurant Email Address</label>
-											<input type="email" id="remailaddress" name="remailaddress" required />
-
+									<div class="fcf-body">
 									
-												
-											<label for="file">Upload Your Menu</label>
-											<input type="file" id="file" name="file" multiple />
-												
-												
-										
-
-
-												<label for="feature">Select Your Features:</label>
-												<select id="feature" name="feature">
-												  <option value="default">--Please select your features--</option>
-												  <option value="o">Online Ordering</option>
-												  <option value="ot">Online Ordering and Table Reservations</option>
-												  <option value="of">Online Ordering and Food Delivery</option>
-												  <option value="otf">Online Ordering, Table Reservations, and Food Delivery</option>
-												</select>
+										<div id="fcf-form">
+										<h3 class="fcf-h3">Contact us</h3>
+									
+										<form id="fcf-form-id" class="fcf-form-class" method="post" action="contact-form-process.php">
 											
-											  
-											  
-									-->
-											<label for="Message">Comments</label>
-											<textarea name="Message" id="Message" cols="30" rows="10"></textarea>
+											<div class="fcf-form-group">
+												<label for="Name" class="fcf-label">Your name</label>
+												<div class="fcf-input-group">
+													<input type="text" id="Name" name="Name" class="fcf-form-control" required>
+												</div>
+											</div>
 									
-											<button type="submit">Go to payment</button>
-										  </form>
+											<div class="fcf-form-group">
+												<label for="Email" class="fcf-label">Your email address</label>
+												<div class="fcf-input-group">
+													<input type="email" id="Email" name="Email" class="fcf-form-control" required>
+												</div>
+											</div>
+									
+											<div class="fcf-form-group">
+												<label for="Message" class="fcf-label">Your message</label>
+												<div class="fcf-input-group">
+													<textarea id="Message" name="Message" class="fcf-form-control" rows="6" maxlength="3000" required></textarea>
+												</div>
+											</div>
+									
+											<div class="fcf-form-group">
+												<button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block">Send Message</button>
+											</div>
+									
+											<div class="fcf-credit" id="fcf-credit">
+											Simple HTML email form provided by <a href="https://www.majesticform.com" target="_blank">MajesticForm</a>
+											</div>
+									
+										</form>
 										</div>
-									  </body>
-
-
 									
-								</p>
+									</div>
+									
+									</body>
+
+
+
+
 							</header>
 							
 						</article>
