@@ -53,23 +53,14 @@
 								
 								<body>
 									<div class="formcarry-container">
-										<form action="form-process2.php" method="POST" class="formcarry-form" enctype="multipart/form-data">
-											<label for="to">To:</label>
-											<input type="email" id="to" name="to"><br>
-											
-											<label for="subject">Subject:</label>
-											<input type="text" id="subject" name="subject"><br>
-											
-											<label for="message">Message:</label>
-											<textarea id="message" name="message"></textarea><br>
-											
-											<label for="from">From:</label>
-											<input type="email" id="from" name="from"><br>
-											
-											<label for="attachment">Attachment:</label>
-											<input type="file" id="attachment" name="attachment"><br>
-											
-											<input type="submit" value="Send">
+										<form action="form-process2.php" method="POST" class="formcarry-form">
+											<p>Enter Your Name : <input typ="text" name="sender_name"></p>
+											<p>Enter Your Email : <input typ="text" name="sender_email"></p>
+											<p>Enter Recipient Email : <input typ="text" name="reciever_email"></p>
+											<p>Enter Email Subject : <input typ="text" name="subject"></p>
+											<p>Enter Message : <textarea id="text" name="message"></textarea></p>
+											<p>Select File : <input type="file" name="attach_file"></p>
+											<p><input type="submit" name="send_mail" value="Send"></p>
 									  </form>
 									</div>
 								  </body>

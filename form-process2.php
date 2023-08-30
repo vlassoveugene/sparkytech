@@ -1,45 +1,28 @@
 <?php
-// recipient email address
-$to = $_POST['to'];
+if(isset($_POST['send_mail']))
+{
+ $name=$_POST['sender_name'];
+ $sender_email=$_POST['sender_email'];
+ $send_to=$_POST['reciever_email'];
+ $subject=$_POST['subject'];
+ $message=$_POST['message'];
+	
+ $attachment=$_FILES["attach_file"]["tmp_name"];
+ $folder="files/";
+ $file_name=$_FILES["attach_file"]["name"];
+ move_uploaded_file($_FILES["attach_file"]["tmp_name"], "$folder".$_FILES["attach_file"]["name"]);
+	
+ require_once('class.phpmailer.php');	
+ $send_mail = new PHPMailer();
+ $send_mail->From = $sender_email;
+ $send_mail->FromName = $name;
+ $send_mail->Subject = $subject;
+ $send_mail->Body = $message;
+ $send_mail->AddAddress($send_to);
 
-// subject of the email
-$subject = $_POST['subject'];
+ $attach_file = $folder."".$file_name;
+ $send_mail->AddAttachment($attach_file);
 
-// message body
-$message = $_POST['message'];
-
-// from
-$from = $_POST['from'];
-
-// boundary
-$boundary = uniqid();
-
-// header information
-$headers = "From: $from\r\n";
-$headers .= "MIME-Version: 1.0\r\n";
-$headers .= "Content-Type: multipart/mixed; boundary=\".$boundary.\"\r\n";
-
-// attachment
-$file = $_FILES["attachment"]["tmp_name"];
-$filename = $_FILES["attachment"]["name"];
-$attachment = chunk_split(base64_encode(file_get_contents($file)));
-
-// message with attachment
-$message = "--".$boundary."\r\n";
-$message .= "Content-Type: text/plain; charset=UTF-8\r\n";
-$message .= "Content-Transfer-Encoding: base64\r\n\r\n";
-$message .= chunk_split(base64_encode($message));
-$message .= "--".$boundary."\r\n";
-$message .= "Content-Type: application/octet-stream; name=\"".$filename."\"\r\n";
-$message .= "Content-Transfer-Encoding: base64\r\n";
-$message .= "Content-Disposition: attachment; filename=\"".$filename."\"\r\n\r\n";
-$message .= $attachment."\r\n";
-$message .= "--".$boundary."--";
-
-// send email
-if (mail($to, $subject, $message, $headers)) {
-    echo "Email with attachment sent successfully.";
-} else {
-    echo "Failed to send email with attachment.";
+ return $send_mail->Send();
 }
 ?>
