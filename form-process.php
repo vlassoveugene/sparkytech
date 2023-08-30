@@ -90,10 +90,11 @@ if (isset($_POST['email'])) {
     $email_message .= "Restaurant Email: " . clean_string($remail) . "\n";
     $email_message .= "Features: " . clean_string($features) . "\n";
     $email_message .= "Message: " . clean_string($message) . "\n";
+
     $email_message = "--".$boundary."\r\n";
     $email_message .= "Content-Type: text/plain; charset=UTF-8\r\n";
     $email_message .= "Content-Transfer-Encoding: base64\r\n\r\n";
-    $email_message .= chunk_split(base64_encode($message));
+  
     $email_message .= "--".$boundary."\r\n";
     $email_message .= "Content-Type: application/octet-stream; name=\"file.pdf\"\r\n";
     $email_message .= "Content-Transfer-Encoding: base64\r\n";
