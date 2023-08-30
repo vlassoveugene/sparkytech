@@ -71,6 +71,11 @@ if (isset($_POST['email'])) {
         return str_replace($bad, "", $string);
     }
 
+    $name_of_uploaded_file = basename($_FILES['myfile']['name']);
+
+    $path_of_uploaded_file = $upload_folder . $name_of_uploaded_file;
+
+
     $email_message .= "Name: " . clean_string($name) . "\n";
     $email_message .= "Phone Number: " . clean_string($phone) . "\n";
     $email_message .= "Email: " . clean_string($email) . "\n";
@@ -82,7 +87,7 @@ if (isset($_POST['email'])) {
     $email_message .= "Restaurant Email: " . clean_string($remail) . "\n";
     $email_message .= "Features: " . clean_string($features) . "\n";
     $email_message .= "Message: " . clean_string($message) . "\n";
-    $email_message->addAttachment($myfile);
+    $email_message->addAttachment($path_of_uploaded_file);
 
     // create email headers
     $headers = 'From: ' . $email . "\r\n" .
