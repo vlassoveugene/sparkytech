@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['email'])) {
-    header('Location: index.html');
+
     // REPLACE THIS 2 LINES AS YOU DESIRE
     $email_to = "eugene.vlassov@sparkytech.org";
     $email_subject = "You've got a new submission";
@@ -15,14 +15,13 @@ if (isset($_POST['email'])) {
 
     // validation expected data exists
     if (
-        !isset($_POST['companyname']) ||
         !isset($_POST['fullName']) ||
         !isset($_POST['email']) ||
         !isset($_POST['message'])
     ) {
         problem('Oh looks like there is some problem with your form data.');
     }
-    $company = $_POST['companyname'];
+
     $name = $_POST['fullName']; // required
     $email = $_POST['email']; // required
     $message = $_POST['message']; // required
@@ -58,7 +57,6 @@ if (isset($_POST['email'])) {
 
     $email_message .= "Name: " . clean_string($name) . "\n";
     $email_message .= "Email: " . clean_string($email) . "\n";
-    $email_message .= "Company: " . clean_string($company) . "\n";
     $email_message .= "Message: " . clean_string($message) . "\n";
 
     // create email headers
@@ -68,9 +66,9 @@ if (isset($_POST['email'])) {
     @mail($email_to, $email_subject, $email_message, $headers);
 ?>
 
-    Thank you! Your order has been placed. Check your email for confirmation.
-    
-    We will have your website ready within 2 weeks.
+    <!-- Replace this as your success message -->
+
+    Thanks for contacting us, we will get back to you as soon as possible.
 
 <?php
 }
