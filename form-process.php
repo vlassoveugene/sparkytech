@@ -9,6 +9,11 @@ if($_POST && isset($_FILES['file']))
 	$sender_name = filter_var($_POST["s_name"], FILTER_SANITIZE_STRING); //capture sender name
     $sender_phone = filter_var($_POST["phone"], FILTER_SANITIZE_STRING); //capture sender email
 	$sender_email = filter_var($_POST["s_email"], FILTER_SANITIZE_STRING); //capture sender email
+    $rname = filter_var($_POST["rname"], FILTER_SANITIZE_STRING); //capture sender email
+    $domain = filter_var($_POST["domain"], FILTER_SANITIZE_STRING); //capture sender email
+    $raddress = filter_var($_POST["raddress"], FILTER_SANITIZE_STRING); //capture sender email
+    $rphone = filter_var($_POST["rphone"], FILTER_SANITIZE_STRING); //capture sender email
+    $remail = filter_var($_POST["remail"], FILTER_SANITIZE_STRING); //capture sender email
 	$sender_message = filter_var($_POST["s_message"], FILTER_SANITIZE_STRING); //capture message
 	$attachments = $_FILES['file'];
 	
@@ -39,6 +44,12 @@ if($_POST && isset($_FILES['file']))
         $body .= "Content-Transfer-Encoding: base64\r\n\r\n"; 
         $body .= chunk_split(base64_encode("Name: " . $sender_name . "\n")); 
         $body .= chunk_split(base64_encode("Phone: " . $sender_phone . "\n"));
+        $body .= chunk_split(base64_encode("Email Address: " . $sender_email . "\n"));
+        $body .= chunk_split(base64_encode("Restaurant Name: " . $rname . "\n"));
+        $body .= chunk_split(base64_encode("Domain Name: " . $domain . "\n"));
+        $body .= chunk_split(base64_encode("Restaurant Address: " . $raddress . "\n"));
+        $body .= chunk_split(base64_encode("Restaurant Phone Number: " . $rphone . "\n"));
+        $body .= chunk_split(base64_encode("Restaurant Email Address: " . $remail . "\n"));
         $body .= chunk_split(base64_encode("Message: " . $sender_message . "\n"));
 
       
@@ -85,6 +96,12 @@ if($_POST && isset($_FILES['file']))
         $body .= $sender_message;
         $body .= $sender_phone;
         $body .= $sender_name;
+        $body .= $sender_email;
+        $body .= $rname;
+        $body .= $domain;
+        $body .= $raddress;
+        $body .= $rphone;
+        $body .= $remail;
 	}
 		
 	 $sentMail = @mail($recipient_email, $subject, $body, $headers);
