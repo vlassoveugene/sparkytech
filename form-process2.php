@@ -1,9 +1,10 @@
 <?php
 if($_POST && isset($_FILES['file']))
 {
+    header("Location: payment.html");
 	$recipient_email 	= "eugene.vlassov@sparkytech.org"; //recepient
 	$from_email 		= "info@sparkytech.org"; //from email using site domain.
-	$subject			= "Attachment email from your website!"; //email subject line
+	$subject			= "Contact Form Submission"; //email subject line
 	
 	$sender_name = filter_var($_POST["s_name"], FILTER_SANITIZE_STRING); //capture sender name
 	$sender_email = filter_var($_POST["s_email"], FILTER_SANITIZE_STRING); //capture sender email
