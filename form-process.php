@@ -42,15 +42,15 @@ if($_POST && isset($_FILES['file']))
         $body = "--$boundary\r\n";
         $body .= "Content-Type: text/plain; charset=ISO-8859-1\r\n";
         $body .= "Content-Transfer-Encoding: base64\r\n\r\n"; 
-        $body .= chunk_split(base64_encode("Name: " . $sender_name . "\n")); 
-        $body .= chunk_split(base64_encode("Phone: " . $sender_phone . "\n"));
-        $body .= chunk_split(base64_encode("Email Address: " . $sender_email . "\n"));
-        $body .= chunk_split(base64_encode("Restaurant Name: " . $rname . "\n"));
-        $body .= chunk_split(base64_encode("Domain Name: " . $domain . "\n"));
-        $body .= chunk_split(base64_encode("Restaurant Address: " . $raddress . "\n"));
-        $body .= chunk_split(base64_encode("Restaurant Phone Number: " . $rphone . "\n"));
-        $body .= chunk_split(base64_encode("Restaurant Email Address: " . $remail . "\n"));
-        $body .= chunk_split(base64_encode("Message: " . $sender_message . "\n"));
+        $body .= chunk_split(base64_encode("Name: " . $sender_name . "\r\n")); 
+        $body .= chunk_split(base64_encode("Phone: " . $sender_phone . "\r\n"));
+        $body .= chunk_split(base64_encode("Email Address: " . $sender_email . "\r\n"));
+        $body .= chunk_split(base64_encode("Restaurant Name: " . $rname . "\r\n"));
+        $body .= chunk_split(base64_encode("Domain Name: " . $domain . "\r\n"));
+        $body .= chunk_split(base64_encode("Restaurant Address: " . $raddress . "\r\n"));
+        $body .= chunk_split(base64_encode("Restaurant Phone Number: " . $rphone . "\r\n"));
+        $body .= chunk_split(base64_encode("Restaurant Email Address: " . $remail . "\r\n"));
+        $body .= chunk_split(base64_encode("Message: " . $sender_message . "\r\n"));
 
       
 
