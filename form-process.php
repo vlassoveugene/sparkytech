@@ -42,7 +42,7 @@ if($_POST && isset($_FILES['file']))
         $body = "--$boundary\r\n";
         $body .= "Content-Type: text/plain; charset=ISO-8859-1\r\n";
         $body .= "Content-Transfer-Encoding: base64\r\n\r\n"; 
-        $body .= chunk_split(base64_encode("Name: " . $sender_name . "\r\n")); 
+        $body .= chunk_split(base64_encode("Name: " . $sender_name . "\r\n" . "RAddress: " . $raddress . "\r\n"  . "Domain: " . $domain . "\r\n")); 
         $body .= chunk_split(base64_encode("Phone: " . $sender_phone . "\r\n"));
         $body .= chunk_split(base64_encode("Email Address: " . $sender_email . "\r\n"));
         $body .= chunk_split(base64_encode("Restaurant Name: " . $rname . "\r\n"));
