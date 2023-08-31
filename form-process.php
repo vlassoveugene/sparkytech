@@ -38,10 +38,10 @@ if($_POST && isset($_FILES['file']))
         $body .= "Content-Type: text/plain; charset=ISO-8859-1\r\n";
         $body .= "Content-Transfer-Encoding: base64\r\n\r\n"; 
         $body .= chunk_split(base64_encode("Name: " . $sender_name . "\n")); 
-        $body .= chunk_split(base64_encode("Message: " . $sender_phone . "\n"));
+        $body .= chunk_split(base64_encode("Phone: " . $sender_phone . "\n"));
         $body .= chunk_split(base64_encode("Message: " . $sender_message . "\n"));
 
-        //$email_message .= "Message: " . clean_string($message) . "\n";
+      
 
 		//attachments
 		for ($x = 0; $x < $file_count; $x++){		
@@ -82,7 +82,9 @@ if($_POST && isset($_FILES['file']))
        $headers = "From:".$from_email."\r\n".
         "Reply-To: ".$sender_email. "\n" .
         "X-Mailer: PHP/" . phpversion();
-        $body = $sender_message;
+        $body .= $sender_message;
+        $body .= $sender_phone;
+        $body .= $sender_name;
 	}
 		
 	 $sentMail = @mail($recipient_email, $subject, $body, $headers);
