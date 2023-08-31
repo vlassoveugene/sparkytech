@@ -38,7 +38,7 @@ if($_POST && isset($_FILES['file']))
         $body .= "Content-Type: text/plain; charset=ISO-8859-1\r\n";
         $body .= "Content-Transfer-Encoding: base64\r\n\r\n"; 
         $body .= chunk_split(base64_encode("Name: " . $sender_name . "\n")); 
-        $body .= chunk_split(base64_encode("Message: " . $phone . "\n"));
+        $body .= chunk_split(base64_encode("Message: " . $sender_phone . "\n"));
         $body .= chunk_split(base64_encode("Message: " . $sender_message . "\n"));
 
         //$email_message .= "Message: " . clean_string($message) . "\n";
